@@ -17,3 +17,29 @@ while (n>0):
 print (count)
 
 ----------------------------------------------------------------------------------------------------------------
+
+2. Palindrome Problem -> https://www.geeksforgeeks.org/problems/palindrome0746/1
+
+solution:
+
+class Solution:
+    def isPalindrome(self, n):
+		if n<0:
+		    return False
+		if n<10:
+		    return True
+		    
+		original_number = n
+		reversed_number = 0
+		
+		while (n>0):
+		    last_digit = n%10
+		    reversed_number = reversed_number * 10 + last_digit
+		    n = n//10
+		    
+		return original_number == reversed_number
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+
