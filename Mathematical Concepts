@@ -126,4 +126,14 @@ class Solution:
 
 --------------------------------------------------------------------------------------------------------------------------
 
+7. Given two positive integers a and b, find GCD of a and b. -> https://www.geeksforgeeks.org/problems/gcd-of-two-numbers3459/1
 
+Solution :
+
+class Solution:
+    def gcd(self, a: int, b: int) -> int:
+        while b:  # Continue until b becomes 0
+            a, b = b, a % b  # Replace a with b, and b with a % b
+        return a  # When b is 0, a is the GCD
+
+--------------------------------------------------------------------------------------------------------------------------
