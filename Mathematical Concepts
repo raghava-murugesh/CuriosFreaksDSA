@@ -259,5 +259,28 @@ class Solution:
 
 --------------------------------------------------------------------------------------------------------------------------
 
-15. 
+15. Count Squares -> https://www.geeksforgeeks.org/problems/count-squares3649/1
 
+Solution : Loop based solution
+import math
+class Solution:
+    def countSquares(self, n):
+        # code here 
+        count = 0
+        for i in range (1, math.isqrt(n-1)+1):
+            if i*i<n:
+                count += 1
+                
+        return count
+
+Solution : Optimal Solution 
+import math
+class Solution:
+    def countSquares(self, n):
+        if n <= 1:
+            return 0
+        return math.isqrt(n - 1)  # Returns floor(sqrt(n-1))
+
+--------------------------------------------------------------------------------------------------------------------------
+
+16. 
