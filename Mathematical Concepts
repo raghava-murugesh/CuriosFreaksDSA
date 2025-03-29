@@ -243,5 +243,21 @@ class Solution:
 
 --------------------------------------------------------------------------------------------------------------------------
 
+14. Reverse digits -> https://www.geeksforgeeks.org/problems/reverse-digit0316/1
 
+Solution :
+class Solution:
+	def reverseDigits(self, n):
+		# Code here
+		reversed_number = 0
+		while (n>0):
+		    last_digit = n%10
+		    reversed_number = reversed_number * 10 + last_digit
+		    n = n//10
+		    
+		return reversed_number 
+
+--------------------------------------------------------------------------------------------------------------------------
+
+15. 
 
