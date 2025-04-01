@@ -1,0 +1,41 @@
+1. Palindrome ->  https://www.geeksforgeeks.org/problems/palindrome0746/1
+
+Solution :
+class Solution:
+    def isPalindrome(self, n):
+		if n<0:
+		    return False
+		if n<10:
+		    return True
+		    
+		original_number = n
+		reversed_number = 0
+		
+		while (n>0):
+		    last_digit = n%10
+		    reversed_number = reversed_number * 10 + last_digit
+		    n = n//10
+		    
+		return original_number == reversed_number
+
+-------------------------------------------------------------------------------------------------------
+
+2. Reverse a Number -> https://www.geeksforgeeks.org/python-program-to-reverse-a-number/?ref=ml_lbp
+
+Solution :
+
+class Solution:
+    def isReverse(self, n):
+    original_number = n
+    reversed_number = 0
+
+    while(n>0):
+        last_digit = n%10
+        reversed_number = reversed_number * 10 + last_digit
+        n = n//10
+
+    return reversed_number
+
+-------------------------------------------------------------------------------------------------------
+
+3. 
