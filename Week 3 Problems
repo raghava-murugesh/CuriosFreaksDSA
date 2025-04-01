@@ -38,4 +38,53 @@ class Solution:
 
 -------------------------------------------------------------------------------------------------------
 
-3. 
+3. Factorial Problem -> https://www.geeksforgeeks.org/problems/factorial5739/1
+
+Solution :
+class Solution:
+    def factorial (self, n):
+        # code here
+        fact = 1
+        for i in range(1, n+1):
+            fact = fact * i
+        return fact
+
+-------------------------------------------------------------------------------------------------------
+
+4. Prime Number -> https://www.geeksforgeeks.org/problems/prime-number2314/1
+
+Solution :
+class Solution:
+    def isPrime(self, n):
+        # code here
+        if n <= 1:
+            return False
+        if n == 2:
+            return True
+        if n%2 == 0:
+            return False
+        for i in range (3, int(n**0.5) +1, 2):
+            if n % i == 0:
+                return False
+        return True
+
+-------------------------------------------------------------------------------------------------------
+
+5. Number of Divisors -> https://www.geeksforgeeks.org/problems/number-of-divisors1631/1?
+
+Solution :
+
+class Solution:
+    def countDivisors(self, n):
+        # code here
+        divisors = 0
+        for i in range(1, int(n**0.5) +1):
+            if n%i == 0:
+                if i%3 == 0:
+                    divisors += 1
+            if i != n//i and (n//i)%3 == 0:
+                divisors += 1
+                
+        return divisors
+
+-------------------------------------------------------------------------------------------------------
