@@ -283,4 +283,14 @@ class Solution:
 
 --------------------------------------------------------------------------------------------------------------------------
 
-16. 
+16. Printing Array -> https://www.geeksforgeeks.org/problems/print-elements-of-array4910/1
+
+Solution :
+class Solution:
+    # Just print the space seperated array elements
+	def printArray(self, arr):
+	    # code here
+	    print (*arr)
+(print(*arr) unpacks the elements of arr and prints them space-separated)
+
+--------------------------------------------------------------------------------------------------------------------------
