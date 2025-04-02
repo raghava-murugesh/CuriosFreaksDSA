@@ -43,7 +43,6 @@ class Solution:
 Solution :
 class Solution:
     def factorial (self, n):
-        # code here
         fact = 1
         for i in range(1, n+1):
             fact = fact * i
@@ -56,7 +55,6 @@ class Solution:
 Solution :
 class Solution:
     def isPrime(self, n):
-        # code here
         if n <= 1:
             return False
         if n == 2:
@@ -76,7 +74,6 @@ Solution :
 
 class Solution:
     def countDivisors(self, n):
-        # code here
         divisors = 0
         for i in range(1, int(n**0.5) +1):
             if n%i == 0:
@@ -88,3 +85,156 @@ class Solution:
         return divisors
 
 -------------------------------------------------------------------------------------------------------
+
+6. GCD -> https://www.geeksforgeeks.org/problems/gcd-of-two-numbers3459/1
+
+Solution :
+class Solution:
+    def gcd(self, a: int, b: int) -> int:
+        while b:  # Continue until b becomes 0
+            a, b = b, a % b  # Replace a with b, and b with a % b
+        return
+(Euclidean Algorithm => a,b = b, a%b)
+
+-------------------------------------------------------------------------------------------------------
+
+7. Middle of three -> https://www.geeksforgeeks.org/problems/middle-of-three2926/1
+Solution :
+class Solution:
+    def middle(self, a, b, c):
+        if a>b:
+            if a>c:
+                return b if b>c else c
+            else:
+                return a
+        else:
+            if b>c:
+                return a if a>c else c
+            else :
+                return b 
+
+-------------------------------------------------------------------------------------------------------
+
+8. Find nth term -> https://www.geeksforgeeks.org/problems/find-n-th-term-of-series-1-3-6-10-15-215506/1
+NOTE: nth term 1,3,6,10,15,21 ..... n
+Solution :
+class Solution:
+    def findNthTerm(self, n):
+        return n * (n + 1) // 2
+
+ -------------------------------------------------------------------------------------------------------
+
+9. Special sum series -> https://www.geeksforgeeks.org/problems/special-series-sum0903/1
+NOTE: Sum of the series 1 + (1+2) + (1+2+3) + (1+2+3+4) + …… + (1+2+3+4+…+n)
+
+Solution :
+class Solution:
+    def sumOfTheSeries(self, n):
+        return n * (n + 1) * (n + 2) // 6 
+
+ -------------------------------------------------------------------------------------------------------
+
+10. Special ODD series -> https://www.geeksforgeeks.org/problems/special-odd-series-sum1235/1
+NOTE: Sum of the series 1 + (1+3) + (1+3+5) + (1+3+5+7) + …… + (1+3+5+7+…+(2n-1))
+
+Solution : 
+class Solution:
+    def sumOfTheSeries(self, n):
+        return n * (n + 1) * (2 * n + 1) // 6
+
+ -------------------------------------------------------------------------------------------------------
+
+11. Sum of Natural Numbers -> https://www.geeksforgeeks.org/problems/sum-of-series2811/1
+(looks similar to nth term sum)
+
+Solution :
+class Solution:
+    def seriesSum(self, n : int) -> int:
+        return n * (n+1) // 2
+
+-------------------------------------------------------------------------------------------------------
+
+12. Sum of first n terms -> https://www.geeksforgeeks.org/problems/sum-of-first-n-terms5843/1
+[1^3, 2^3, 3^3,  ...... n]
+
+Solution :
+class Solution:
+    def sumOfSeries(self,n):
+        sum = 0
+        for i in range (1, n+1):
+            i = i*i*i
+            sum = sum + i
+        return sum
+            
+-------------------------------------------------------------------------------------------------------
+
+13. Sum of 5th power n terms -> https://www.geeksforgeeks.org/problems/sum-of-fifth-powers-of-the-first-n-natural-numbers3415/1
+[1^5, 2^5, 3^5 ....... n]
+
+Solution :
+class Solution:
+    def sumOfFifthPowers(self,n):
+        sum = 0
+        for i in range (1, n+1):
+            i = i*i*i*i*i
+            sum = sum + i
+        return sum
+
+-------------------------------------------------------------------------------------------------------
+
+14. Square Difference -> https://www.geeksforgeeks.org/problems/squares-difference0939/1
+Solution :
+class Solution:
+    def squaresDiff (self, n):
+        sum_of_squares = 0
+        square_of_sum = 0
+        
+        for i in range (1, n+1):
+            sum_of_squares += i*i
+            
+        total_sum = 0    
+        for i in range (1, n+1):
+            total_sum += i
+        square_of_sum = total_sum ** 2
+        
+        return abs (sum_of_squares - square_of_sum)
+
+-------------------------------------------------------------------------------------------------------
+
+15. Reverse Digits -> https://www.geeksforgeeks.org/problems/reverse-digit0316/1
+Solution :
+class Solution:
+	def reverseDigits(self, n):
+		reversed_number = 0
+		while (n>0):
+		    last_digit = n%10
+		    reversed_number = reversed_number * 10 + last_digit
+		    n = n//10
+		    
+		return reversed_number 
+
+-------------------------------------------------------------------------------------------------------
+
+16. Count Squares -> https://www.geeksforgeeks.org/problems/count-squares3649/1
+Solution :
+import math
+class Solution:
+    def countSquares(self, n):
+        count = 0
+        for i in range (1, math.isqrt(n-1)+1):
+            if i*i<n:
+                count += 1
+                
+        return count
+
+ -------------------------------------------------------------------------------------------------------
+
+17. Print Elements of Array -> https://www.geeksforgeeks.org/problems/print-elements-of-array4910/1
+
+Solution :
+class Solution:
+    # Just print the space seperated array elements
+	def printArray(self, arr):
+	    print (*arr)
+
+ -------------------------------------------------------------------------------------------------------
