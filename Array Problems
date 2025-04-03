@@ -7,7 +7,7 @@ class Solution:
 
 --------------------------------------------------------------------------------------------
 
-Count odd and even numbers in arr -> https://www.geeksforgeeks.org/problems/count-odd-even/1
+2. Count odd and even numbers in arr -> https://www.geeksforgeeks.org/problems/count-odd-even/1
 Solution:
 class Solution:
 	def countOddEven(self, arr):
@@ -22,3 +22,18 @@ class Solution:
 	    return (odd,even)
 
 --------------------------------------------------------------------------------------------
+
+3. Larhest num in arr -> https://www.geeksforgeeks.org/problems/largest-element-in-array4009/1
+
+Solution :
+class Solution:
+    def largest(self, arr):
+        large = arr[0]
+        for i in arr:
+            if large < i:
+                large = i
+        return large
+
+--------------------------------------------------------------------------------------------
+
+4. 
