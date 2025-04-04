@@ -34,6 +34,70 @@ class Solution:
                 large = i
         return large
 
---------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
 
-4. 
+4. Smallest Number and second smallest number -> https://www.geeksforgeeks.org/problems/find-the-smallest-and-second-smallest-element-in-an-array3226/1
+
+Solution :
+class Solution:
+    def minAnd2ndMin(self, arr):
+        if len(arr) < 2:  # Handle cases where there aren't enough elements
+            return [-1, -1]  # Not enough elements
+        
+        Small, secondSmall = float('inf'), float('inf')
+
+        for i in arr:
+            if i < Small:  # Found a new smallest number
+                secondSmall = Small  # Update second smallest
+                Small = i  # Update smallest
+            elif Small < i < secondSmall:  # Found a new second smallest
+                secondSmall = i
+
+        if secondSmall == float('inf'):  # If no valid second smallest found
+            return [-1, -1]
+
+        return [Small, secondSmall]  # Return both values
+
+-----------------------------------------------------------------------------------------------------------------------
+
+5. Min and Max num in arr -> https://www.geeksforgeeks.org/problems/find-minimum-and-maximum-element-in-an-array4428/1
+
+Solution:
+class Solution:
+    def get_min_max(self, arr):
+        maximum = arr[0]
+        minimum = arr[0]
+        for i in arr:
+            if maximum < i:
+                maximum = i
+            elif minimum > i:
+                minimum = i
+                
+        return (minimum, maximum)
+
+-----------------------------------------------------------------------------------------------------------------------
+
+6. Print an array in Pendulum Arrangement -> https://www.geeksforgeeks.org/problems/print-an-array-in-pendulum-arrangement4004/1
+
+Solutiom:
+
+class Solution:
+    def pendulumArrangement(self, arr):
+        arr.sort()
+        result = [0] * len(arr)
+        mid = (len(arr) - 1) // 2
+        left, right = mid, mid + 1
+
+        for i in range(len(arr)):
+            if i % 2 == 0:
+                result[left] = arr[i]
+                left -= 1
+            else:
+                result[right] = arr[i]
+                right += 1
+
+        return result
+
+-----------------------------------------------------------------------------------------------------------------------
+
+7. 
