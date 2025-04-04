@@ -100,4 +100,15 @@ class Solution:
 
 -----------------------------------------------------------------------------------------------------------------------
 
-7. 
+7. Alternates in an Array -> https://www.geeksforgeeks.org/problems/print-alternate-elements-of-an-array/1
+
+Solution :
+class Solution:
+    def getAlternates(self, arr):
+        # Code Here
+        Output = []
+        for i in range(0, len(arr), 2):
+            Output.append(arr[i])
+        return Output
+
+-----------------------------------------------------------------------------------------------------------------------
