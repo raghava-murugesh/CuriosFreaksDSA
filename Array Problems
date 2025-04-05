@@ -161,11 +161,25 @@ class Solution:
 Solution : 
 from typing import List
 
-
 class Solution:
     def isPerfect(self, arr : List[int]) -> bool:
         return arr == arr[::-1]
 
 -----------------------------------------------------------------------------------------------------------------------
 
-12. 
+12. Smaller and Larger -> https://www.geeksforgeeks.org/problems/smaller-and-larger4005/1
+
+Solution :
+class Solution:
+    def getMoreAndLess(self, arr: list[int], target: int) ->list[int]:
+		large_array = 0
+		small_array = 0
+		for i in arr:
+		    if target <= i:
+		        large_array += 1
+		    if (target >= i):
+		        small_array += 1
+		        
+		return [small_array, large_array]
+
+-----------------------------------------------------------------------------------------------------------------------
