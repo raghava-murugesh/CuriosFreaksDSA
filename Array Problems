@@ -204,4 +204,53 @@ class Solution:
 
 -----------------------------------------------------------------------------------------------------------------------
 
-14. 
+14. Sieve of Eratosthenes -> https://www.geeksforgeeks.org/problems/sieve-of-eratosthenes5242/1
+
+Solution :
+class Solution:
+    def sieveOfEratosthenes(self, n):
+        is_Prime = [True] * (n+1)
+        is_Prime[0] = is_Prime[1] = False
+        
+        for i in range (2, int(n**0.5)+1):
+            if is_Prime[i]:
+                for j in range(i * i, n + 1, i):
+                    is_Prime[j] = False
+                    
+        prime = [i for i in range(2, n+1) if is_Prime[i]]
+        return prime
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+15. Given a range [L, R]. The task is to find the sum of all the prime numbers in the given range from L to R both inclusive.
+Examples:  
+
+Input : L = 10, R = 20
+Output : Sum = 60
+Prime numbers between [10, 20] are:
+11, 13, 17, 19
+Therefore, sum = 11 + 13 + 17 + 19 = 60
+Input : L = 15, R = 25
+Output : Sum = 59
+
+Note: Use sieve of eratosthenes to solve the problem
+
+
+Solution :
+L = int(input("Enter a Number : "))
+R = int(input("Enter a Number : "))
+is_Prime = [True] * (R+1)
+is_Prime[0] = is_Prime[1] = False  // no need of this if you give L more than 2 //
+
+for i in range (2, int(R**0.5)+1):
+    if is_Prime[i]:
+        for j in range (i*i, R+1, i):
+            is_Prime[j] = False
+            
+Prime = [i for i in range(L, R+1) if is_Prime[i]]
+sum_of_Prime = sum(Prime)
+print(Prime)
+print(sum_of_Prime)
+
+-----------------------------------------------------------------------------------------------------------------------
+
