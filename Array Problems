@@ -183,3 +183,25 @@ class Solution:
 		return [small_array, large_array]
 
 -----------------------------------------------------------------------------------------------------------------------
+
+13. Max and Min Product from 2 Arrays -> https://www.geeksforgeeks.org/problems/product-of-maximum-in-first-array-and-minimum-in-second3943/0
+
+Solution :
+class Solution:
+    # Function to find the maximum element from array arr1 and 
+    # the minimum element from array arr2 and return their product.
+    def find_multiplication(self, arr1, arr2):
+        maximum_element = float ('-inf')
+        minimum_element = float ('inf')
+        for i in arr1:
+            if i > maximum_element:
+                maximum_element = i
+        for i in arr2:
+            if i < minimum_element:
+                minimum_element = i
+                
+        return maximum_element * minimum_element
+
+-----------------------------------------------------------------------------------------------------------------------
+
+14. 
