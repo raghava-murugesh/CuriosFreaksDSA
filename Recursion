@@ -9,3 +9,17 @@ class Solution:
         print(n, end=' ')
 
 --------------------------------------------------------------------------------------------------------------------------------------------
+
+2. Nth Fibonacci Number -> https://www.geeksforgeeks.org/problems/nth-fibonacci-number1335/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article
+
+Solution : 
+class Solution:
+    def nthFibonacci(self, n: int) -> int:
+        if n==0:
+            return 0
+        elif n==1:
+            return 1
+        else:
+            return self.nthFibonacci(n-1) + self.nthFibonacci(n-2)
+
+--------------------------------------------------------------------------------------------------------------------------------------------
