@@ -1,0 +1,11 @@
+1. Print 1 To N Without Loop -> https://www.geeksforgeeks.org/problems/print-1-to-n-without-using-loops-1587115620/1
+
+Solution : 
+class Solution:    
+    def printNos(self,n):
+        if (n==0):
+            return
+        self.printNos(n-1)
+        print(n, end=' ')
+
+--------------------------------------------------------------------------------------------------------------------------------------------
