@@ -67,4 +67,27 @@ print ("Sum of the numbers is : ", Sum_of_numbers(n))
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
-5. 
+5. Write a program to print the divisors of a number recursively.
+
+Example:
+Input: 6
+Output: 1 2 3 6
+
+Example:
+Input: 12
+Output: 1 2 3 4 6 12
+
+Solution :
+
+def print_divisors(n, i=1):
+    if i > n:
+        return
+    if n % i == 0:
+        print(i, end=' ')
+    print_divisors(n, i + 1)
+
+# Example usage
+n = int(input("Number: "))
+print_divisors(n)
+
+--------------------------------------------------------------------------------------------------------------------------------------------
