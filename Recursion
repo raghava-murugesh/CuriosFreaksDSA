@@ -23,3 +23,48 @@ class Solution:
             return self.nthFibonacci(n-1) + self.nthFibonacci(n-2)
 
 --------------------------------------------------------------------------------------------------------------------------------------------
+
+3. Write a recursive algorithm to find the count of digits in a number.
+
+Example:
+Input: 353445
+Outpput: 6
+Example 2 :
+Input: 53543
+Output: 5
+
+Solution: 
+
+n = int(input("number : "))
+def Count_numbers(n):
+    if n%10==n:
+        return 1
+    return 1 + Count_numbers(n//10)
+    
+print (Count_numbers(n))
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+4. Write a recursive program to find the sum of digits of a number.
+
+Example:
+Input: 342
+Output: 9
+
+Example 2:
+Input: 34534
+Ouput: 19
+
+Solution :
+
+n = int(input("number : "))
+def Sum_of_numbers(n):
+    if n%10==n:
+        return n
+    return (n%10) + Sum_of_numbers(n//10)
+    
+print ("Sum of the numbers is : ", Sum_of_numbers(n))
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+5. 
