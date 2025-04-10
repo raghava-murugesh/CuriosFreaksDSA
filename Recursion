@@ -91,3 +91,31 @@ n = int(input("Number: "))
 print_divisors(n)
 
 --------------------------------------------------------------------------------------------------------------------------------------------
+
+6. Write a Program to find the power of a number recursively. Take two inputs, number and the power.
+
+Example:
+Input: 2 3
+Output: 8
+Explanation : 2^3 is 8
+Example:
+
+Input: 5 2
+Output: 25
+Explanation: 5^2 is 25
+
+Solution :
+a = int(input("a : "))
+b = int(input("b : "))
+
+def powerof (a,b):
+    if b == 0:
+        return 1
+    else:
+        return a * powerof (a, b-1)
+        
+print (powerof (a, b))
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+7. 
