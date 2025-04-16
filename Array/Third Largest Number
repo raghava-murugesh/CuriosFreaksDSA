@@ -1,0 +1,8 @@
+Third Largest Number -> https://www.geeksforgeeks.org/problems/third-largest-element/1
+Solution :
+class Solution:
+    def thirdLargest(self,arr):
+        if len(arr) < 3:
+            return -1
+        arr.sort()
+        return arr [-3]
