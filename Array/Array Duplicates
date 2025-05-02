@@ -1,0 +1,17 @@
+Problem -> https://www.geeksforgeeks.org/problems/find-duplicates-in-an-array/1
+
+Solution :
+class Solution:
+    def findDuplicates(self, arr):
+        # code here
+        freq = {}
+        res=[]
+        for num in arr:
+            freq[num] = freq.get(num, 0) + 1
+        
+        for num, count in freq.items():
+            if count > 1:
+                res.append(num)
+                    
+        return res
+                
