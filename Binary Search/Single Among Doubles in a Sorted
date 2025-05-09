@@ -1,0 +1,34 @@
+Problem -> https://www.geeksforgeeks.org/problems/find-the-element-that-appears-once-in-sorted-array0624/1
+
+Solution: (XOR bit Manipulation)
+class Solution:
+    def findOnce(self,arr):
+        # Complete this function
+        ans = 0
+        for num in arr:
+            ans ^= num
+            
+        return ans
+
+===========================================================================================================================
+
+Solution: (Binary Search)
+class Solution:
+    def findOnce(self,arr):
+        # Complete this function
+        low, high = 0, len(arr)-1
+        
+        while low < high:
+            mid = (low+high)//2
+            
+            if mid % 2 == 1:
+                mid -= 1
+                
+            if arr[mid] == arr[mid + 1]:
+                low = mid+2
+                
+            else:
+                high = mid
+                
+        return arr[low]
+
