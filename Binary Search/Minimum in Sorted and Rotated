@@ -1,0 +1,16 @@
+Leetcode -> https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/submissions/1630603758/
+Geeks for geeks -> https://www.geeksforgeeks.org/problems/minimum-element-in-a-sorted-and-rotated-array3611/1
+
+Solution: 
+class Solution:
+    def findMin(self, nums: List[int]) -> int:
+        low = 0
+        high = len(nums) - 1
+        
+        while low < high:
+            mid = (low+high)//2
+            if nums[mid] > nums[high]:
+                low = mid + 1
+            else:
+                high = mid
+        return nums[low]
