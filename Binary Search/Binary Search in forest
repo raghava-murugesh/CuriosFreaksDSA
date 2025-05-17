@@ -1,0 +1,22 @@
+Problem -> https://www.geeksforgeeks.org/problems/binary-search-in-forest--141631/1
+
+Solution:
+class Solution:
+    def find_height(self, tree, n, k):
+        def wood_collected(H):
+            return sum((height - H) for height in tree if height > H)
+
+        low, high = 0, max(tree)
+
+        while low <= high:
+            mid = (low + high) // 2
+            wood = wood_collected(mid)
+
+            if wood == k:
+                return mid  # Found the exact required height
+            elif wood > k:
+                low = mid + 1  # Try a taller cut to reduce wood
+            else:
+                high = mid - 1  # Too little wood, cut lower
+
+        return -1
