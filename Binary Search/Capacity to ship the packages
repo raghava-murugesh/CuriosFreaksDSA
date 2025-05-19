@@ -1,0 +1,33 @@
+Problem -> https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/description/
+
+Solution:
+from typing import List
+
+class Solution:
+    def getdays(self, weights: List[int], cap: int) -> int:
+        days = 1
+        curr_sum = 0
+        for weight in weights:
+            if curr_sum + weight <= cap:
+                curr_sum += weight
+            else:
+                days += 1
+                curr_sum = weight
+        return days
+
+    def shipWithinDays(self, weights: List[int], days: int) -> int:
+        low = max(weights)        # Can't be less than heaviest package
+        high = sum(weights)       # Can't be more than total weight
+        ans = high                # Start with max possible
+
+        while low <= high:
+            mid = (low + high) // 2
+            required_days = self.getdays(weights, mid)
+
+            if required_days <= days:
+                ans = mid
+                high = mid - 1    # Try to reduce capacity
+            else:
+                low = mid + 1     # Increase capacity
+
+        return ans
